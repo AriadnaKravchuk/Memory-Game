@@ -128,7 +128,6 @@ body,
 }
 
 .start-page__inner {
-    padding: 0.625rem 0;
     max-width: 1140px;
     padding: 1.25rem;
     color: #3b3b3b;
@@ -210,6 +209,7 @@ body,
 }
 
 .game-page {
+    padding: 0.625rem 0;
     background-color: var(--game-page-background);
     font-family: var(--game-page-font-family);
     color: var(--game-page-font-color);
