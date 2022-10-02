@@ -11,6 +11,8 @@
     --start-page-text-font-size: 1rem;
     --start-page-text-margin: 0.938rem 0 0;
     --start-page-subtitle-font-size: 1.2rem;
+    --start-page-text-width: 650px;
+    --details-group-width: 500px;
     --details-button-font-size: 0.875rem;
     --details-content-font-size: 1rem;
     --details-content-padding: 0.938rem;
@@ -142,7 +144,7 @@ body,
 
 .start-page__text {
     margin: var(--start-page-text-margin);
-    max-width: 700px;
+    max-width: var(--start-page-text-width);
     font-size: var(--start-page-text-font-size);
 }
 
@@ -153,7 +155,7 @@ body,
 }
 
 .details-group {
-    max-width: 500px;
+    max-width: var(--details-group-width);
     margin: 0 auto;
 }
 
@@ -352,7 +354,7 @@ body,
     --card-front-background: #32312D;
     --card-back-background: whitesmoke;
     --status-board-background: ivory;
-    --game-page-border-settings: 0.438rem #32312D solid;
+    --game-page-border-settings: 0.313rem #32312D solid;
     --card-front-border: #20201e;
     --card-back-border: lightgrey;
     --card-front-color: ivory;
@@ -410,7 +412,7 @@ body,
     }
 
     :root body.gothic {
-        --status-board-font-size: 4.5vw;
+        --status-board-font-size: 4.7vw;
         --game-page-border-settings: 0.313rem #32312D solid;
     }
 }
@@ -418,8 +420,9 @@ body,
 @media (max-width: 370px) {
     :root {
         --game-page-gap: 0.313rem;
-        --start-page-title-font-size: 2rem;
-        --start-page-text-font-size: 0.875rem;
+        --start-page-title-font-size: 2.2rem;
+        --start-page-text-font-size: 1rem;
+        --start-page-subtitle-font-size: 1.1rem;
         --details-button-font-size: 0.625rem;
         --details-content-font-size: 0.938rem;
         --status-board-font-size: 4.1vw;
@@ -430,16 +433,18 @@ body,
     }
 
     :root body.gothic {
-        --status-board-font-size: 4.1vw;
+        --status-board-font-size: 3.9vw;
     }
 }
 
 @media (min-width: 750px) and (min-height: 900px) {
     :root {
         --start-page-title-font-size: 2.7rem;
-        --start-page-text-font-size: 1.25rem;
+        --start-page-text-font-size: 1.3rem;
         --start-page-text-margin: 1.2rem 0 0;
         --start-page-subtitle-font-size: 1.7rem;
+        --start-page-text-width: 800px;
+        --details-group-width: 550px;
         --details-button-font-size: 0.875rem;
         --details-content-font-size: 1.125rem;
         --details-content-padding: 0.938rem;
@@ -473,5 +478,6 @@ body,
     :root body.gothic {
         --status-board-margin: -1.6rem auto 0;
         --status-board-font-size: 1.9rem;
+        --game-page-border-settings: 0.625rem black solid;
     }
 }
