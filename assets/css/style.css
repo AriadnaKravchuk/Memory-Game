@@ -7,7 +7,7 @@
 }
 
 :root {
-    --start-page-title-font-size: 2.2rem;
+    --start-page-title-font-size: 2rem;
     --start-page-text-font-size: 1rem;
     --start-page-text-margin: 0.938rem 0 0;
     --start-page-subtitle-font-size: 1.2rem;
@@ -15,8 +15,9 @@
     --details-content-font-size: 1rem;
     --details-content-padding: 0.938rem;
     --start-page-copyright: 0.938rem;
-    --details-summary-padding: 1.25rem;
+    --details-summary-padding: 1rem;
     --details-summary-font-size: 1.125rem;
+    --game-page-gap: 0.625rem;
     --game-page-title-font-size: 2.75rem;
     --game-page-board-padding: 1.1rem;
     --game-page-board-gap: 0.5rem;
@@ -29,8 +30,10 @@
     --status-board-gap: 0.625rem;
     --status-board-font-size: 1.5rem;
     --status-board-radius: 0.625rem;
-    --status-board-padding: 0.313rem 0.625rem;
+    --status-board-padding: 0.5rem 0.625rem;
     --status-board-margin: -1.4rem auto 0;
+    --status-board-height: 3.125rem;
+    --status-board-width: 18.125rem;
     --card-front-font-size: 3rem;
     --popup-title-font-size: 2rem;
     --popup-text-font-size: 1.125rem;
@@ -211,13 +214,16 @@ body,
 
 .game-page {
     padding: 0.625rem 0;
+    gap: var(--game-page-gap);
     background-color: var(--game-page-background);
     font-family: var(--game-page-font-family);
     color: var(--game-page-font-color);
 }
 
 .game-page__title {
+    user-select: none;
     font-size: var(--game-page-title-font-size);
+    line-height: var(--game-page-title-font-size);
     font-family: inherit;
 }
 
@@ -246,6 +252,7 @@ body,
 
 .card__front,
 .card__back {
+    user-select: none;
     position: absolute;
     border-radius: var(--card-radius);
     -webkit-backface-visibility: hidden;
@@ -271,9 +278,12 @@ body,
 }
 
 .game__status-board {
-    width: fit-content;
+    user-select: none;
+    height: var(--status-board-height);
+    width: var(--status-board-width);
     gap: var(--status-board-gap);
     font-size: var(--status-board-font-size);
+    line-height: var(--status-board-font-size);
     font-family: inherit;
     background-color: var(--status-board-background);
     border: var(--game-page-border-settings);
@@ -342,11 +352,12 @@ body,
     --card-front-background: #32312D;
     --card-back-background: whitesmoke;
     --status-board-background: ivory;
-    --game-page-border-settings: 0.313rem #32312D solid;
+    --game-page-border-settings: 0.438rem #32312D solid;
     --card-front-border: #20201e;
     --card-back-border: lightgrey;
     --card-front-color: ivory;
     --popup-button-color-hover: #3b3a35;
+    --status-board-font-size: 1.35rem;
 }
 
 :root body.daily-life {
@@ -387,24 +398,39 @@ body,
         --game-page-template: calc(25vw - var(--game-page-board-padding) * 2 / 4 - var(--game-page-board-gap) * 2 / 4 - 0.313rem - 0.625rem * 2 / 4);
         --game-page-board-radius: 1.3vw;
         --status-board-font-size: 5vw;
-        --status-board-padding: 0.25rem 0.328rem;
+        --status-board-padding: 0.438rem;
         --status-board-margin: -1.3rem auto 0;
+        --status-board-height: 10vw;
+        --status-board-width: 67vw;
         --card-front-font-size: 10vw;
         --popup-title-font-size: 1.75rem;
         --popup-text-font-size: 1rem;
         --popup-button-padding: 0.625rem;
         --popup-button-font-size: 0.875rem;
     }
+
+    :root body.gothic {
+        --status-board-font-size: 4.5vw;
+        --game-page-border-settings: 0.313rem #32312D solid;
+    }
 }
 
 @media (max-width: 370px) {
     :root {
+        --game-page-gap: 0.313rem;
         --start-page-title-font-size: 2rem;
         --start-page-text-font-size: 0.875rem;
         --details-button-font-size: 0.625rem;
         --details-content-font-size: 0.938rem;
-        --status-board-font-size: 4vw;
+        --status-board-font-size: 4.1vw;
         --status-board-margin: -1.1rem auto 0;
+        --status-board-padding: 0.313rem;
+        --status-board-height: 10vw;
+        --status-board-width: 55vw;
+    }
+
+    :root body.gothic {
+        --status-board-font-size: 4.1vw;
     }
 }
 
@@ -418,7 +444,7 @@ body,
         --details-content-font-size: 1.125rem;
         --details-content-padding: 0.938rem;
         --start-page-copyright: 1.3rem;
-        --details-summary-padding: 1rem;
+        --details-summary-padding: 1.25rem;
         --details-summary-font-size: 1.4rem;
         --game-page-title-font-size: 3.7rem;
         --game-page-board-padding: 1.5rem;
@@ -434,15 +460,18 @@ body,
         --status-board-radius: 0.8rem;
         --status-board-padding: 0.4rem 0.75rem;
         --status-board-margin: -2rem auto 0;
-        --card-front-font-size: 3rem;
+        --status-board-height: 4.375rem;
+        --status-board-width: 25.625rem;
+        --card-front-font-size: 4.5rem;
         --popup-width: 450px;
         --popup-title-font-size: 2.6rem;
         --popup-text-font-size: 1.4rem;
         --popup-button-padding: 0.938rem;
-        --popup-button-font-size: 1rem;
+        --popup-button-font-size: 1.9rem;
     }
 
     :root body.gothic {
         --status-board-margin: -1.6rem auto 0;
+        --status-board-font-size: 1.9rem;
     }
 }
