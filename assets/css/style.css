@@ -481,3 +481,17 @@ body,
         --game-page-border-settings: 0.625rem black solid;
     }
 }
+
+@media (min-width: 1000px) and (min-height: 900px) {
+    :root {
+        --start-page-title-font-size: 3rem;
+        --start-page-text-font-size: 1.6rem;
+        --start-page-subtitle-font-size: 1.8rem;
+        --start-page-text-width: 950px;
+        --details-group-width: 650px;
+        --details-button-font-size: 1rem;
+        --details-content-font-size: 1.4rem;
+        --start-page-copyright: 1.5rem;
+        --details-summary-font-size: 1.5rem;
+    }
+}
